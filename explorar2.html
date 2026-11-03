@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPod Menu - Explorar</title>
+    <link rel="stylesheet" href="explorar2.css">
+</head>
+<body>
+
+    <div class="main-container">
+        <!-- GIF IZQUIERDO (Opcional) -->
+        <img src="https://i.pinimg.com/originals/b8/69/b0/b869b0d6fef1c3b1e7ba6a0e00b01044.gif" alt="GIF Izquierdo" class="side-gif left-gif">
+
+        <!-- EL REPRODUCTOR -->
+        <div class="ipod-device">
+            <!-- Pantalla -->
+            <div class="screen-container">
+                <div class="screen-header">
+                    <span id="screen-title">iPod</span>
+                    <div class="battery-icon">🔋</div>
+                </div>
+                
+                <!-- Área de contenido -->
+                <div id="screen-content" class="screen-content">
+                    <!-- El contenido se genera con JS -->
+                </div>
+
+                <!-- NUEVO: Contenedor para Pop-ups Retro -->
+                <div id="retro-popup" class="retro-popup hidden">
+                    <div class="popup-header">
+                        <span id="popup-title">Mensaje</span>
+                    </div>
+                    <div class="popup-body" id="popup-message">
+                        <!-- Texto aquí -->
+                    </div>
+                    <div class="popup-footer">
+                        <button class="retro-btn" onclick="closePopup()">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rueda de control (Click Wheel) -->
+            <div class="click-wheel">
+                <div class="wheel-button menu-btn" id="btn-menu">MENU</div>
+                <div class="wheel-button prev-btn" id="btn-prev">◀</div>
+                <div class="wheel-button next-btn" id="btn-next">▶</div>
+                <div class="center-button" id="btn-select"></div>
+                <div class="wheel-button play-btn" id="btn-play">▼</div>
+            </div>
+        </div>
+
+        <!-- GIF DERECHO (Opcional) -->
+        <img src="https://media.giphy.com/media/HrSVKltIzgYx8F8iyy/giphy.gif" alt="GIF Derecho" class="side-gif right-gif">
+    </div>
+
+  
+        <!-- FIREBASE -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCgFNswx0WvB7qNe8gPdva15MNFiRNXHQA",
+            authDomain: "archivo-del-olvido.firebaseapp.com",
+            projectId: "archivo-del-olvido",
+            storageBucket: "archivo-del-olvido.firebasestorage.app",
+            messagingSenderId: "495603336776",
+            appId: "1:495603336776:web:bfc2956cd2514a5fe73a7d",
+            measurementId: "G-RHF1T55FC2"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        window.db = firebase.firestore();
+    </script>
+
+    <!-- TU SCRIPT ORIGINAL -->
+    <script src="explorar2.js"></script>
+</body>
+</html>
+</body>
+</html>

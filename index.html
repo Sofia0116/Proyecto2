@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Archivo del Olvido - Inicio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fuente redondeada tipo Frutiger Aero -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Música de fondo -->
+    <audio id="musica-fondo" src="cancion1.mp3" loop></audio>
+
+    <!-- Contenedor de burbujas -->
+    <div id="burbujas-container"></div>
+
+    <!-- Contenedor de notificaciones -->
+    <div id="contenedor-notificaciones" class="contenedor-notificaciones"></div>
+
+    <!-- Tu layout original adaptado -->
+    <div class="flex-inicio">
+        <div class="layout-retro">
+            <div class="caja-titulo">
+                <h1>EL ARCHIVO DEL OLVIDO</h1>
+            </div>
+
+            <div class="caja-links">
+                <div class="titulo-caja">ÍNDICE</div>
+                <button class="btn-retro" data-info="Aquí hablamos de cómo los recuerdos se desvanecen con el tiempo.">Sobre nosotros</button>
+                <button class="btn-retro" data-info="Esta página es un espacio para dejar recuerdos efímeros. Cada uno dura 6 horas.">Uso de la página</button>
+                <button class="btn-retro" id="btn-ir-oceano" onclick="window.location.href='explorar2.html'">Comunidad</button>
+
+                 <div class="textbox" style="text-align: center;">
+               <img src="https://images.emojiterra.com/google/noto-emoji/animated-emoji/1f419.gif" width="100px" style="margin: auto; display: block; 
+                filter: drop-shadow(.5px .5px 1px #A57352);"/> 
+                <a href="https://www.flaticon.es/" class="enlace-texto">Eligue tu icono</a>
+          </div>
+
+            </div>
+
+            <div class="caja-mensaje">
+                <h2>Bienvenido al Archivo</h2>
+                <p class="texto-poetico">
+                    "Algunos recuerdos no se ven, pero se sienten.<br>
+                    Aquí guardamos todo lo que el tiempo intentó borrar...<br>
+                    pero solo por un tiempo."
+                </p>
+                <p class="texto-pequeno">
+                    Este es un espacio para dejar fragmentos de tu memoria. 
+                    Elige un icono, oculta una imagen detrás de él y lánzalo al océano. 
+                    En 6 horas, se habrá desvanecido para siempre.
+                </p>
+                <button id="btn-ingresar" class="btn-retro btn-grande" onclick="window.location.href='explorar.html'">[ Entrar al Archivo ]</button>
+            </div>
+
+            <div class="caja-decorativa">
+                <p><strong>✦ Recuerdos Efímeros ✦</strong></p>
+                <p>Una vez que el recuerdo se va, no vuelve.</p>
+                <div class="icono-decorativo">🕰️</div>
+            </div>
+
+               <div class="textbox">
+               <img src="https://i.pinimg.com/originals/28/bc/44/28bc44b5eed41b8a0b7829231bd684ad.gif" width="100px" style="margin: auto; display: block; 
+                filter: drop-shadow(.5px .5px 1px #A57352);"/> 
+               <p style="text-align: center; font-size: 14.5px; margin-top: 10px;">We didn't realize we were making memories, we just knew we were having fun</p>
+          </div>
+       
+
+            <div class="caja-footer">
+                ©  Bryana Sofia Antonio del Angel-El Archivo del Olvido - 2024
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- Script para generar las burbujas -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('burbujas-container');
+            const numBurbujas = 25; // Cantidad de burbujas en pantalla
+
+            for (let i = 0; i < numBurbujas; i++) {
+                const burbuja = document.createElement('div');
+                burbuja.className = 'burbuja';
+                
+                // Tamaño aleatorio entre 10px y 80px
+                const size = Math.random() * 70 + 10;
+                burbuja.style.width = `${size}px`;
+                burbuja.style.height = `${size}px`;
+                
+                // Posición inicial aleatoria (izquierda/derecha)
+                burbuja.style.left = `${Math.random() * 100}vw`;
+                
+                // Duración de la animación aleatoria
+                burbuja.style.animationDuration = `${Math.random() * 10 + 8}s`;
+                
+                // Retraso para que no salgan todas al mismo tiempo
+                burbuja.style.animationDelay = `${Math.random() * 10}s`;
+                
+                // Opacidad aleatoria
+                burbuja.style.opacity = Math.random() * 0.5 + 0.2;
+
+                container.appendChild(burbuja);
+            }
+        });
+    </script>
+</body>
+</html>
